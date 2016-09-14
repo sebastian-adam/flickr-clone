@@ -1,0 +1,7 @@
+- if @posts.any?
+  - @posts.each do |post|
+    = image_tag post.image.url
+    %br
+    = link_to post.caption, post_path(post)
+- else
+  %p There are no pictures. Upload one!
