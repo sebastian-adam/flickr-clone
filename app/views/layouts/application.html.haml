@@ -7,6 +7,14 @@
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body
-    = flash[:alert]
-    = flash[:notice]
-    = yield
+    - if flash[:alert]
+      .container
+        .alert.alert-danger{role: "alert"}
+          = flash[:alert]
+    - if flash[:notice]
+      .container
+        .alert.alert-success{role: "alert"}
+          = flash[:notice]
+    = render "layouts/navbar"
+    .container
+      = yield

@@ -1,0 +1,7 @@
+= render 'layouts/errors', :object => @post
+
+= simple_form_for @post do |f|
+  = f.input :image
+  = f.input :location
+  = f.input :caption
+  = f.button :submit
