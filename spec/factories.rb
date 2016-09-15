@@ -6,6 +6,9 @@ FactoryGirl.define do
     factory(:admin) do
       admin true
     end
+    factory(:confirmed_user) do
+      after(:create) { |user| user.confirmed_at = Time.now }
+    end
   end
 
   factory(:account) do
@@ -25,6 +28,7 @@ FactoryGirl.define do
   factory(:post) do
     caption("i follow you")
     location("A pond")
+    image Rack::Test::UploadedFile.new("#{Rails.root}/spec/fixtures/images/Sienna.jpg", "image/jpg")
     factory :posts_with_accounts do
       transient do
         accounts_count 2
