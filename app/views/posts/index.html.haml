@@ -1,6 +1,6 @@
 - if @posts.any?
   - @posts.each do |post|
-    = image_tag post.image.url
+    = image_tag post.image.url(:medium)
     %br
     = link_to post.caption, post_path(post)
 - else
