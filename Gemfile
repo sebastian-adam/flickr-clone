@@ -42,6 +42,15 @@ gem "paperclip", "~> 5.0.0"
 
 gem 'devise', "~> 4.2.0"
 
+# Needed for Rails Admin with Rails 5
+gem 'remotipart', github: 'mshibuya/remotipart'
+#Theme for Rails Admin
+gem 'rails_admin_rollincode', '~> 1.0'
+# Use Rails Admin for Admin Panel
+gem 'rails_admin', '>= 1.0.0.rc'
+
+gem 'cancancan'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
@@ -61,6 +70,7 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  gem "letter_opener"
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

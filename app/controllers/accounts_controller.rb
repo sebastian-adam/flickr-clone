@@ -14,6 +14,7 @@ class AccountsController < ApplicationController
     if @account.save
       current_user.account_id = @account.id
       current_user.save
+      flash[:notice] = "Thanks for creating an account."
       redirect_to account_path(@account)
     else
       render :new
