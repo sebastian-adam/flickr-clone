@@ -17,7 +17,7 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
     @post.user = current_user
     if @post.save
-      NewPostEmail.notify_user(current_user, @post).deliver
+      # NewPostEmail.notify_user(current_user, @post).deliver
       redirect_to post_path(@post)
     else
       render :new
